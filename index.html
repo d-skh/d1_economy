@@ -36,7 +36,6 @@
     <style>
       /* Добавьте в конец существующего <style> блока */
       body {
-        overflow-x: hidden;
         width: 100%;
         max-width: 100vw;
       }
@@ -73,12 +72,12 @@
       /* ---------- СЕРО-ЖЕЛТАЯ ТЕМА (МИНИМАЛИСТИЧНАЯ) ---------- */
       :root {
         /* Primary colors - холодный серый */
-        --bg-primary: #fafaf9;
-        --bg-secondary: #f4f4f2;
-        --bg-tertiary: #eeeeea;
-        --text-primary: #2c2c28;
-        --text-secondary: #5c5c56;
-        --text-muted: #8e8e86;
+        --bg-primary: #fff9e7;
+        --bg-secondary: #ffffd6;
+        --bg-tertiary: #fff2c6;
+        --text-primary: #5f4617;
+        --text-secondary: #5c4209;
+        --text-muted: #5f4600;
 
         /* Accent colors - лимонно-желтый */
         --accent: #f5b81b;
@@ -93,11 +92,13 @@
         --secondary-soft: #f8f8f0;
 
         /* Border & UI */
-        --border-light: #e6e6df;
-        --border-medium: #cecec2;
-        --card-bg: #ffffff;
-        --card-shadow:
-          0 1px 2px rgba(0, 0, 0, 0.03), 0 6px 14px rgba(0, 0, 0, 0.02);
+        --border-light: #574107;
+        --border-medium: #ffd000;
+        --card-bg: #fff0b3;
+--card-shadow: 
+  0 8px 20px -6px rgba(245, 184, 27, 0.25),
+  0 2px 6px -2px rgba(245, 184, 27, 0.15),
+  0 1px 2px rgba(0, 0, 0, 0.03);
         --hover-bg: #fdfdf8;
 
         /* Status */
@@ -107,7 +108,7 @@
 
         /* Gradient accents */
         --gradient-start: #f5b81b;
-        --gradient-end: #b8b8aa;
+        --gradient-end: #c29500;
       }
 
       html.dark {
@@ -124,7 +125,7 @@
         --accent-soft: #2a2a20;
         --accent-glow: rgba(255, 205, 74, 0.12);
 
-        --secondary: #4e4e48;
+        --secondary: #f1d900;
         --secondary-light: #ffff80;
         --secondary-soft: #2a2a24;
 
@@ -139,8 +140,8 @@
         --warning: #ffcd4a;
         --error: #dc7a5a;
 
-        --gradient-start: #ffcd4a;
-        --gradient-end: #4e4e48;
+        --gradient-start: #ffd208;
+        --gradient-end: #ffa600;
       }
 
       /* Базовые стили с использованием переменных */
@@ -234,19 +235,20 @@
         width: 100%;
       }
 
-      /* Карточки */
       .card {
         background: var(--card-bg);
-        border: 1px solid var(--border-light);
-        border-radius: 1.25rem;
-        transition: all 0.25s ease;
+        border-radius: 1rem;
+        transition: all 0.2s ease;
         box-shadow: var(--card-shadow);
+        border-left: 4px solid var(--accent);
       }
 
       .card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.15);
-        border-color: var(--border-medium);
+        transform: translateX(4px) translateY(-2px);
+        box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+        border-left-width: 6px;
+        border-left-color: var(--accent-dark);
+        background: var(--hover-bg);
       }
 
       /* Бейджи */
@@ -337,7 +339,7 @@
       /* Стили для списков и блоков */
       .stat-block {
         background: var(--accent-glow);
-        border-left: 3px solid var(--accent);
+        border-left: 3px solid var(--border-light);
         padding: 1rem;
         border-radius: 1rem;
       }
@@ -592,9 +594,7 @@
       </div>
     </div>
 
-    <div
-      class="w-full max-w-[1600px] mx-auto flex px-4 sm:px-6 lg:px-10 gap-8 overflow-hidden"
-    >
+    <div class="w-full max-w-[1600px] mx-auto flex px-4 sm:px-6 lg:px-10 gap-8">
       <!-- SIDEBAR -->
       <div
         class="hidden xl:block w-72 shrink-0 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-5 border-r"
@@ -701,9 +701,7 @@
       </div>
 
       <!-- MAIN CONTENT -->
-      <main
-        class="flex-1 max-w-4xl mx-auto xl:mx-0 py-8 space-y-16 min-w-0 overflow-x-hidden"
-      >
+      <main class="flex-1 max-w-4xl mx-auto xl:mx-0 py-8 space-y-16 min-w-0">
         <!-- Hero -->
         <div class="reveal text-center md:text-left">
           <div
@@ -716,7 +714,7 @@
                 color: var(--text-secondary);
               "
             >
-              МИНОБРНАУКИ РФ
+              Министерство науки и высшего образования РФ
             </span>
             <span
               class="badge text-xs sm:text-sm"
@@ -730,15 +728,33 @@
             class="startup-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1]"
             style="color: var(--text-primary)"
           >
-            Осуществление расчетов & платежей
+            Организация
+            <span
+              style="
+                background: linear-gradient(
+                  135deg,
+                  var(--gradient-start) 0%,
+                  var(--gradient-end) 100%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+            >
+              расчётно-платёжных
+            </span>
+            операций
           </h1>
 
           <div
             class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-6 text-sm sm:text-base"
           >
             <div class="text-center sm:text-left">
-              <span class="text-xs sm:text-sm" style="color: var(--text-muted)">
-                Студент группы ТКБО-01-24
+              <span
+                class="text-xs sm:text-sm uppercase tracking-wide"
+                style="color: var(--text-muted)"
+              >
+                Автор
               </span>
               <br />
               <span
@@ -746,6 +762,9 @@
                 style="color: var(--text-primary)"
               >
                 Сухоревский Д. А.
+              </span>
+              <span class="text-xs" style="color: var(--text-muted)">
+                группа ТКБО-01-24
               </span>
             </div>
 
@@ -755,8 +774,11 @@
             ></div>
 
             <div class="text-center sm:text-left">
-              <span class="text-xs sm:text-sm" style="color: var(--text-muted)">
-                Преподаватель
+              <span
+                class="text-xs sm:text-sm uppercase tracking-wide"
+                style="color: var(--text-muted)"
+              >
+                Научный руководитель
               </span>
               <br />
               <span
@@ -768,8 +790,18 @@
             </div>
 
             <div class="sm:ml-auto text-center sm:text-right mt-2 sm:mt-0">
-              <span class="text-xs sm:text-sm" style="color: var(--text-muted)">
-                Москва, 2026
+              <span
+                class="text-xs sm:text-sm uppercase tracking-wide"
+                style="color: var(--text-muted)"
+              >
+                Москва
+              </span>
+              <br />
+              <span
+                class="text-base font-semibold"
+                style="color: var(--text-primary)"
+              >
+                2026
               </span>
             </div>
           </div>
@@ -777,173 +809,539 @@
 
         <!-- ВВЕДЕНИЕ -->
         <section id="vvedenie" class="reveal scroll-mt-20">
-          <h2
-            class="section-accent text-3xl font-black startup-heading mb-6"
-            style="color: var(--text-primary)"
-          >
-            ВВЕДЕНИЕ
-          </h2>
+          <div class="mb-6">
+            <span
+              class="text-xs font-semibold uppercase tracking-wider"
+              style="color: var(--accent); letter-spacing: 0.12em"
+            >
+              Введение
+            </span>
+            <h2
+              class="text-4xl sm:text-5xl font-black startup-heading mt-1"
+              style="color: var(--text-primary); line-height: 1.2"
+            >
+              <span
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    var(--gradient-start) 0%,
+                    var(--gradient-end) 100%
+                  );
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+              >
+                Расчётно-платёжная
+              </span>
+              <br class="hidden sm:block" />система России
+            </h2>
+          </div>
+
           <div
-            class="space-y-4 leading-relaxed"
+            class="space-y-5 leading-relaxed"
             style="color: var(--text-secondary)"
           >
-            <p>
-              Расчеты и платежи — основа экономических отношений. В РФ они
-              регулируются
-              <span class="font-semibold" style="color: var(--accent)"
-                >Гражданским кодексом, банковским правом и актами Банка
-                России</span
-              >. Актуальность темы обусловлена цифровизацией, развитием
-              <span class="font-semibold" style="color: var(--accent)"
-                >СБП</span
+            <p class="text-base sm:text-lg">
+              Расчёты и платежи — это
+              <span class="font-bold" style="color: var(--accent-dark)"
+                >цифровой пульс экономики</span
+              >. В Российской Федерации их архитектура базируется на
+              <span
+                class="font-semibold border-b-2"
+                style="
+                  border-color: var(--accent-light);
+                  color: var(--text-primary);
+                "
               >
-              и внедрением
-              <span class="font-semibold" style="color: var(--secondary)"
-                >цифрового рубля</span
+                Гражданском кодексе, банковском праве и нормативных актах Банка
+                России </span
               >.
             </p>
-            <p>
-              <span class="font-bold" style="color: var(--accent)"
-                >🎯 Цель доклада</span
+
+            <div
+              class="relative bg-opacity-30 rounded-xl p-5 my-6"
+              style="
+                background: var(--accent-soft);
+                border-left: 4px solid var(--accent);
+              "
+            >
+              <p
+                class="text-base font-medium m-0"
+                style="color: var(--text-primary)"
               >
-              — дать исчерпывающее описание видов расчетов и платежей по
-              законодательству РФ, анализ их достоинств и недостатков, детальный
-              разбор банковских карт.
-            </p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
+                <span class="text-xl mr-2">🎯</span>
+                <span class="font-black" style="color: var(--accent-dark)"
+                  >Цель</span
+                >
+                — представить системный анализ видов расчётов и платежей по
+                законодательству РФ, исследовать их эволюцию в условиях
+                цифровизации, детально декомпозировать
+                <span class="font-semibold" style="color: var(--accent)"
+                  >банковские карты</span
+                >
+                и новые феномены:
+                <span
+                  class="font-semibold"
+                  style="
+                    background: linear-gradient(
+                      120deg,
+                      var(--gradient-start) 0%,
+                      var(--gradient-end) 100%
+                    );
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                  "
+                >
+                  Систему быстрых платежей и цифровой рубль </span
+                >.
+              </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
               <div
-                class="card p-4"
-                style="border-left: 3px solid var(--accent)"
+                class="card group p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
               >
-                📌 Правовые основы наличных/безналичных
+                <div class="text-2xl mb-2">⚖️</div>
+                <div
+                  class="font-semibold text-sm"
+                  style="color: var(--text-primary)"
+                >
+                  Правовой фундамент
+                </div>
+                <div class="text-xs mt-1" style="color: var(--text-muted)">
+                  Наличные / безналичные расчёты
+                </div>
               </div>
               <div
-                class="card p-4"
-                style="border-left: 3px solid var(--accent)"
+                class="card group p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
               >
-                📌 Все формы по ГК РФ и №762-П
+                <div class="text-2xl mb-2">📋</div>
+                <div
+                  class="font-semibold text-sm"
+                  style="color: var(--text-primary)"
+                >
+                  Формы расчётов
+                </div>
+                <div class="text-xs mt-1" style="color: var(--text-muted)">
+                  По ГК РФ и Положению № 762-П
+                </div>
               </div>
               <div
-                class="card p-4"
-                style="border-left: 3px solid var(--accent)"
+                class="card group p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
               >
-                📌 Анализ преимуществ и рисков
+                <div class="text-2xl mb-2">📊</div>
+                <div
+                  class="font-semibold text-sm"
+                  style="color: var(--text-primary)"
+                >
+                  SWOT-анализ
+                </div>
+                <div class="text-xs mt-1" style="color: var(--text-muted)">
+                  Преимущества и точки напряжения
+                </div>
               </div>
               <div
-                class="card p-4"
-                style="border-left: 3px solid var(--accent)"
+                class="card group p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
               >
-                📌 Банковские карты по ФЗ №161-ФЗ
+                <div class="text-2xl mb-2">💳</div>
+                <div
+                  class="font-semibold text-sm"
+                  style="color: var(--text-primary)"
+                >
+                  Карты &amp; инновации
+                </div>
+                <div class="text-xs mt-1" style="color: var(--text-muted)">
+                  ФЗ № 161-ФЗ + СБП + цифровой рубль
+                </div>
               </div>
+            </div>
+
+            <div
+              class="mt-6 pt-3 text-center text-sm italic"
+              style="
+                color: var(--text-muted);
+                border-top: 1px solid var(--border-light);
+              "
+            >
+              Актуальность продиктована скоростью изменений: от пластика к
+              токену, от SWIFT к СБП
             </div>
           </div>
         </section>
 
         <!-- ГЛАВА 1 -->
         <section id="glava1" class="reveal scroll-mt-20">
-          <h2
-            class="section-accent text-3xl font-black startup-heading mb-6"
-            style="color: var(--text-primary)"
-          >
-            ГЛАВА 1. Правовые основы и виды расчетов
-          </h2>
+<div class="mb-10 relative pl-6">
+  <!-- Градиентная полоса сбоку -->
+  <div 
+    class="absolute left-0 top-1 bottom-1 w-1.5 rounded-full" 
+    style="background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);"
+  ></div>
 
-          <div id="glava1-1" class="mb-8 scroll-mt-20">
-            <h3
-              class="text-2xl font-bold mb-3 flex items-center gap-2"
-              style="color: var(--text-primary)"
-            >
-              <span style="color: var(--accent)">⚖️</span> 1.1. Понятие и
-              правовое регулирование
-            </h3>
-            <p style="color: var(--text-secondary)">
-              <span class="font-semibold">Рубль</span> — законное платежное
-              средство (ст. 140 ГК РФ).
-              <span class="font-semibold">Расчеты</span> — исполнение денежных
-              обязательств, <span class="font-semibold">платежи</span> — любая
-              уплата денег. Ключевые НПА:
-              <span
-                class="badge-accent badge"
-                style="background: var(--accent-glow); color: var(--accent)"
-                >ГК РФ (гл.46)</span
-              >,
-              <span
-                class="badge-accent badge"
-                style="background: var(--accent-glow); color: var(--accent)"
-                >ФЗ №161-ФЗ</span
-              >,
-              <span
-                class="badge-accent badge"
-                style="background: var(--accent-glow); color: var(--accent)"
-                >Положение №762-П</span
-              >. Для юрлиц — преимущественно безналичные расчеты, для граждан —
-              свобода выбора.
-            </p>
-          </div>
+  <span
+    class="text-xs font-semibold uppercase tracking-wider block"
+    style="color: var(--accent); letter-spacing: 0.12em"
+  >
+    Глава 1
+  </span>
+  
+  <h2
+    class="text-3xl sm:text-4xl font-black startup-heading mt-1 leading-tight"
+    style="color: var(--text-primary)"
+  >
+    <span
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start) 0%,
+          var(--gradient-end) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      "
+    >
+      Правовая архитектура
+    </span>
+    <br />расчётных операций
+  </h2>
+</div>
 
-          <div id="glava1-2" class="mb-8 scroll-mt-20">
-            <h3
-              class="text-2xl font-bold mb-3 flex items-center gap-2"
-              style="color: var(--text-primary)"
-            >
-              <span style="color: var(--accent)">💰</span> 1.2. Наличные расчеты
-            </h3>
-            <p style="color: var(--text-secondary)">
-              <span class="font-semibold">Лимит для юрлиц/ИП:</span>
-              <span class="font-bold" style="color: var(--accent)"
-                >100 000 ₽</span
-              >
-              по одному договору. Для граждан — без ограничений. ККТ обязательна
-              в рознице.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-              <div class="card p-5 advantage-card">
-                <span class="text-2xl">✅</span>
-                <span class="font-bold">Достоинства:</span> универсальность,
-                анонимность, мгновенность, отсутствие комиссий.
-              </div>
-              <div class="card p-5 disadvantage-card">
-                <span class="text-2xl">❌</span>
-                <span class="font-bold">Недостатки:</span> риск кражи, затраты
-                на инкассацию, нет автоконтроля, нельзя дистанционно.
-              </div>
-            </div>
+
+          <!-- 1.1 Понятие и правовое регулирование -->
+          <div id="glava1-1" class="mb-10 scroll-mt-20">
+<div id="glava1-1" class="scroll-mt-20 mb-8">
+  <div class="flex items-center gap-4">
+    <!-- Иконка в круге -->
+    <div
+      class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+      style="background: var(--accent-glow)"
+    >
+      <span class="text-lg">⚖️</span>
+    </div>
+
+    <!-- Градиентная полоска -->
+    <div 
+      class="h-8 w-1 rounded-full flex-shrink-0" 
+      style="background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))"
+    ></div>
+
+    <!-- Текст заголовка -->
+    <h3 class="text-xl sm:text-2xl font-bold tracking-tight" style="color: var(--text-primary)">
+      1.1. Правовой фундамент
+    </h3>
+  </div>
+</div>
+
             <div
-              class="mt-4 inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full"
-              style="background: var(--bg-tertiary); color: var(--text-muted)"
+              class="card p-6"
+              style="background: var(--card-bg); box-shadow: var(--card-shadow)"
             >
-              <span style="color: var(--accent)">📊</span> Доля наличных в
-              рознице — ~12% (данные ЦБ РФ, 2026)
+              <p class="leading-relaxed" style="color: var(--text-secondary)">
+                <span class="font-bold" style="color: var(--accent)"
+                  >Рубль</span
+                >
+                — законное платёжное средство
+                <span class="text-sm" style="color: var(--text-muted)"
+                  >(ст. 140 ГК РФ)</span
+                >. <span class="font-semibold">Расчёты</span> — исполнение
+                денежных обязательств,
+                <span class="font-semibold">платежи</span> — любая уплата денег.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span
+                  class="badge px-3 py-1.5 text-sm"
+                  style="
+                    background: var(--accent-glow);
+                    color: var(--accent);
+                    border-radius: 2rem;
+                  "
+                  >ГК РФ (гл.46)</span
+                >
+                <span
+                  class="badge px-3 py-1.5 text-sm"
+                  style="
+                    background: var(--accent-glow);
+                    color: var(--accent);
+                    border-radius: 2rem;
+                  "
+                  >ФЗ №161-ФЗ</span
+                >
+                <span
+                  class="badge px-3 py-1.5 text-sm"
+                  style="
+                    background: var(--accent-glow);
+                    color: var(--accent);
+                    border-radius: 2rem;
+                  "
+                  >Положение №762-П</span
+                >
+              </div>
+              <div class="mt-4 text-sm" style="color: var(--text-muted)">
+                🏢 Для юрлиц — преимущественно безналичные расчёты<br />
+                👤 Для граждан — свобода выбора
+              </div>
             </div>
           </div>
 
-          <div id="glava1-3" class="scroll-mt-20">
-            <h3
-              class="text-2xl font-bold mb-5 flex items-center gap-2"
-              style="color: var(--text-primary)"
+          <!-- 1.2 Наличные расчеты -->
+          <div id="glava1-2" class="mb-10 scroll-mt-20">
+<div id="glava1-2" class="scroll-mt-20 mb-8">
+  <div class="flex items-center gap-4">
+    <!-- Иконка в круге -->
+    <div
+      class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+      style="background: var(--accent-glow)"
+    >
+      <span class="text-lg">💰</span>
+    </div>
+
+    <!-- Градиентная полоска -->
+    <div 
+      class="h-8 w-1 rounded-full flex-shrink-0" 
+      style="background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))"
+    ></div>
+
+    <!-- Текст заголовка -->
+    <h3 class="text-xl sm:text-2xl font-bold tracking-tight" style="color: var(--text-primary)">
+      1.2. Наличные расчёты
+    </h3>
+  </div>
+</div>
+
+
+            <div
+              class="card p-6 mb-5"
+              style="background: var(--card-bg); box-shadow: var(--card-shadow)"
             >
-              <span style="color: var(--accent)">💳</span> 1.3. Безналичные
-              расчеты: формы и анализ
-            </h3>
-            <p class="mb-5" style="color: var(--text-secondary)">
-              Безналичные расчеты — перевод денежных средств банками.
+              <div class="flex flex-wrap justify-between items-center gap-4">
+                <div>
+                  <span class="text-sm" style="color: var(--text-muted)"
+                    >Лимит для юрлиц/ИП по одному договору</span
+                  >
+                  <div class="text-4xl font-black" style="color: var(--accent)">
+                    100 000 ₽
+                  </div>
+                </div>
+                <div
+                  class="h-12 w-px"
+                  style="background: var(--border-light)"
+                ></div>
+                <div>
+                  <span class="text-sm" style="color: var(--text-muted)"
+                    >Для граждан</span
+                  >
+                  <div
+                    class="text-xl font-bold"
+                    style="color: var(--text-primary)"
+                  >
+                    ♾️ Без ограничений
+                  </div>
+                </div>
+                <div
+                  class="badge px-3 py-1.5"
+                  style="
+                    background: var(--bg-tertiary);
+                    color: var(--text-secondary);
+                    border-radius: 2rem;
+                  "
+                >
+                  🧾 ККТ обязательна в рознице
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div
+                class="card p-5"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
+                <div class="flex items-center gap-2 mb-3">
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center"
+                    style="background: rgba(140, 179, 106, 0.15)"
+                  >
+                    <span class="text-lg">✅</span>
+                  </div>
+                  <span class="font-bold text-lg""
+                    >Достоинства</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Универсальность</span
+                  >
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Анонимность</span
+                  >
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Мгновенность</span
+                  >
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Без комиссий</span
+                  >
+                </div>
+              </div>
+              <div
+                class="card p-5"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
+                <div class="flex items-center gap-2 mb-3">
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center"
+                    style="background: rgba(220, 122, 90, 0.15)"
+                  >
+                    <span class="text-lg">❌</span>
+                  </div>
+                  <span class="font-bold text-lg""
+                    >Недостатки</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Риск кражи</span
+                  >
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Затраты на инкассацию</span
+                  >
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Нет автоконтроля</span
+                  >
+                  <span
+                    class="text-sm px-3 py-1 rounded-full"
+                    style="
+                      background: var(--bg-tertiary);
+                      color: var(--text-secondary);
+                    "
+                    >Нельзя дистанционно</span
+                  >
+                </div>
+              </div>
+            </div>
+
+          <div class="mt-5 inline-flex items-center gap-3 text-sm px-5 py-2 rounded-2xl" style="background: var(--accent-soft); border: 1px solid var(--accent-glow); color: var(--text-secondary);">
+  <span class="text-base">📊</span>
+  <span class="font-medium">Наличные в рознице</span>
+  <span class="w-px h-4" style="background: var(--border-light);"></span>
+  <span class="font-black text-lg" style="color: var(--accent);">~12%</span>
+  <span class="text-xs" style="color: var(--text-muted);">ЦБ РФ, 2026</span>
+</div>
+          </div>
+
+          <!-- 1.3 Безналичные расчеты -->
+          <div id="glava1-3" class="scroll-mt-20">
+<div id="glava1-3" class="scroll-mt-20 mb-8">
+  <div class="flex items-center gap-4">
+    <!-- Иконка в круге -->
+    <div
+      class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+      style="background: var(--accent-glow)"
+    >
+      <span class="text-lg">💳</span>
+    </div>
+
+    <!-- Градиентная полоска -->
+    <div 
+      class="h-8 w-1 rounded-full flex-shrink-0" 
+      style="background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))"
+    ></div>
+
+    <!-- Текст заголовка -->
+    <h3 class="text-xl sm:text-2xl font-bold tracking-tight" style="color: var(--text-primary)">
+      1.3. Безналичные расчёты: формы и анализ
+    </h3>
+  </div>
+</div>
+
+
+            <p
+              class="mb-6 leading-relaxed"
+              style="color: var(--text-secondary)"
+            >
+              Безналичные расчёты — перевод денежных средств банками.
               <span class="font-bold" style="color: var(--accent)"
-                >7 основных форм</span
+                >7 ключевых форм</span
               >
               согласно ГК РФ и Положению №762-П:
             </p>
 
+            <!-- Карточки форм расчетов -->
             <div
-              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8"
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
             >
-              <div class="card p-5">
+              <div
+                class="card p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
                 <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">💳</span
-                  ><span class="font-bold" style="color: var(--accent)"
+                  <span class="text-xl">💳</span>
+                  <span class="font-bold" "
                     >Платежные поручения</span
                   >
                 </div>
-                <p style="color: var(--text-secondary)">
+                <p class="text-sm" style="color: var(--text-secondary)">
                   Самая массовая форма. Простота, быстрота, дистанционное
                   исполнение.
                 </p>
@@ -951,225 +1349,372 @@
                   ✔ Мгновенные переводы через СБП
                 </div>
               </div>
-              <div class="card p-5">
+              <div
+                class="card p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
                 <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">🔐</span
-                  ><span class="font-bold" style="color: var(--accent)"
+                  <span class="text-xl">🔐</span>
+                  <span class="font-bold" "
                     >Аккредитив</span
                   >
                 </div>
-                <p style="color: var(--text-secondary)">
-                  Высокая защита сделок, банковская гарантия. Сложный
-                  документооборот, дорого.
+                <p class="text-sm" style="color: var(--text-secondary)">
+                  Высокая защита сделок. Сложный документооборот, дорого.
                 </p>
               </div>
-              <div class="card p-5">
+              <div
+                class="card p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
                 <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">📝</span
-                  ><span class="font-bold" style="color: var(--accent)"
+                  <span class="text-xl">📝</span>
+                  <span class="font-bold" "
                     >Чеки</span
                   >
                 </div>
-                <p style="color: var(--text-secondary)">
+                <p class="text-sm" style="color: var(--text-secondary)">
                   Ценная бумага. Ограниченное применение в РФ, риск подделки.
                 </p>
               </div>
-              <div class="card p-5">
+              <div
+                class="card p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
                 <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">📦</span
-                  ><span class="font-bold" style="color: var(--accent)"
+                  <span class="text-xl">📦</span>
+                  <span class="font-bold" "
                     >Инкассо</span
                   >
                 </div>
-                <p style="color: var(--text-secondary)">
-                  Контроль исполнения обязательств. Длительность операций,
-                  требует акцепта.
+                <p class="text-sm" style="color: var(--text-secondary)">
+                  Контроль исполнения обязательств. Длительность, требует
+                  акцепта.
                 </p>
               </div>
-              <div class="card p-5">
+              <div
+                class="card p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
                 <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">🔄</span
-                  ><span class="font-bold" style="color: var(--accent)"
+                  <span class="text-xl">🔄</span>
+                  <span class="font-bold" "
                     >Прямое дебетование</span
                   >
                 </div>
-                <p style="color: var(--text-secondary)">
-                  Идеально для коммуналки, подписок. Списание с предварительным
+                <p class="text-sm" style="color: var(--text-secondary)">
+                  Идеально для коммуналки, подписок. С предварительным
                   согласием.
                 </p>
               </div>
-              <div class="card p-5">
+              <div
+                class="card p-4"
+                style="
+                  background: var(--card-bg);
+                  box-shadow: var(--card-shadow);
+                "
+              >
                 <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">📱</span
-                  ><span class="font-bold" style="color: var(--accent)"
+                  <span class="text-xl">📱</span>
+                  <span class="font-bold" "
                     >Электронные кошельки</span
                   >
                 </div>
-                <p style="color: var(--text-secondary)">
-                  Скорость, лимиты до 60 000 ₽, анонимность в пределах норм.
+                <p class="text-sm" style="color: var(--text-secondary)">
+                  Скорость, лимиты до 60 000 ₽, анонимность.
                 </p>
               </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-5 my-6">
-              <div
-                class="card p-5"
-                style="border-left: 3px solid var(--accent)"
-              >
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">⚡</span
-                  ><span class="font-black text-lg"
-                    >Система быстрых платежей (СБП)</span
-                  >
-                </div>
-                <p style="color: var(--text-secondary)">
-                  Мгновенные переводы по номеру телефона.
-                  <span class="font-semibold" style="color: var(--accent)"
-                    >До 100 000 ₽/мес бесплатно</span
-                  >, комиссия 0–0,5%. Оплата по QR-коду, круглосуточно.
-                </p>
-                <div class="mt-2 text-sm" style="color: var(--accent)">
-                  ⚠️ Требуется интернет, сложный возврат при ошибке.
-                </div>
-              </div>
-              <div class="card p-5">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="text-2xl">🏦</span
-                  ><span class="font-black text-lg">Цифровой рубль</span>
-                </div>
-                <p style="color: var(--text-secondary)">
-                  Третья форма денег (ст. 861 ГК РФ).
-                  <span class="font-semibold">Полная прослеживаемость</span>,
-                  низкие комиссии, офлайн-режим в перспективе. На стадии
-                  внедрения (2026).
-                </p>
-              </div>
-            </div>
+<!-- Ваш заголовок -->
+<!-- Заголовок адаптированный под тему -->
+<div class="mb-8">
+  <span
+    class="text-xs font-semibold uppercase tracking-wider"
+    style="color: var(--accent); letter-spacing: 0.12em"
+  >
+    Инструментарий
+  </span>
+  <h2
+    class="text-3xl sm:text-4xl font-black startup-heading mt-1"
+    style="color: var(--text-primary)"
+  >
+    <span
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start) 0%,
+          var(--gradient-end) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      "
+    >
+      Современные формы
+    </span>
+    <br />безналичных расчетов
+  </h2>
+</div>
 
-            <div class="grid md:grid-cols-2 gap-6 mt-8">
-              <div class="card p-6 advantage-card">
-                <div class="flex items-center gap-3 mb-4">
-                  <div
-                    class="w-10 h-10 rounded-full flex items-center justify-center text-2xl"
-                    style="background: var(--accent-glow)"
-                  >
-                    ✨
-                  </div>
-                  <span class="font-black text-xl" style="color: var(--accent)"
-                    >Достоинства</span
-                  >
-                </div>
-                <ul class="space-y-3" style="color: var(--text-secondary)">
-                  <li class="flex gap-2">
-                    <span style="color: var(--accent)">✓</span>
-                    <span
-                      ><span class="font-semibold">Безопасность</span> —
-                      блокировка карты, страхование вкладов</span
-                    >
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--accent)">✓</span>
-                    <span
-                      ><span class="font-semibold">Скорость и удобство</span> —
-                      мобильные приложения, оплата в 1 клик</span
-                    >
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--accent)">✓</span>
-                    <span
-                      ><span class="font-semibold">Прозрачность</span> —
-                      автоматический учет расходов, история операций</span
-                    >
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--accent)">✓</span>
-                    <span>Снижение риска кражи наличных, гигиеничность</span>
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--accent)">✓</span>
-                    <span
-                      ><span class="font-semibold">Кэшбэк и бонусы</span> —
-                      возврат до 30% от покупок</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="card p-6 disadvantage-card">
-                <div class="flex items-center gap-3 mb-4">
-                  <div
-                    class="w-10 h-10 rounded-full flex items-center justify-center text-2xl"
-                    style="background: var(--bg-tertiary)"
-                  >
-                    ⚠️
-                  </div>
-                  <span
-                    class="font-black text-xl"
-                    style="color: var(--text-primary)"
-                    >Недостатки</span
-                  >
-                </div>
-                <ul class="space-y-3" style="color: var(--text-secondary)">
-                  <li class="flex gap-2">
-                    <span style="color: var(--text-muted)">✗</span>
-                    <span
-                      ><span class="font-semibold"
-                        >Зависимость от инфраструктуры</span
-                      >
-                      — интернет, электричество, терминалы</span
-                    >
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--text-muted)">✗</span>
-                    <span
-                      ><span class="font-semibold">Кибермошенничество</span> —
-                      фишинг, скимминг, социальная инженерия</span
-                    >
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--text-muted)">✗</span>
-                    <span
-                      ><span class="font-semibold">Комиссии</span> — за
-                      обслуживание, снятие наличных, конвертацию валют</span
-                    >
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--text-muted)">✗</span>
-                    <span
-                      ><span class="font-semibold"
-                        >Отсутствие полной анонимности</span
-                      >
-                      — банки контролируют транзакции</span
-                    >
-                  </li>
-                  <li class="flex gap-2">
-                    <span style="color: var(--text-muted)">✗</span>
-                    <span
-                      ><span class="font-semibold">Технические сбои</span> —
-                      ошибки терминалов, проблемы с серверами</span
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
+<!-- Далее ваш исходный код без изменений (СБП + Цифровой рубль и т.д.) -->
+
+
+<!-- СБП + Цифровой рубль -->
+<div class="grid md:grid-cols-2 gap-5 mb-5">
+  <div
+    class="card p-5"
+    style="
+      background: linear-gradient(
+        135deg,
+        var(--card-bg),
+        var(--accent-soft)
+      );
+      border-left: 4px solid var(--accent);
+    "
+  >
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-2xl">⚡</span>
+      <span class="font-black text-lg">Система быстрых платежей</span>
+    </div>
+    <p
+      class="text-sm leading-relaxed"
+      style="color: var(--text-secondary)"
+    >
+      Мгновенные переводы по номеру телефона.
+    </p>
+    <div
+      class="mt-2 text-sm font-semibold"
+      style="color: var(--accent)"
+    >
+      До 100 000 ₽/мес бесплатно
+    </div>
+    <div class="text-xs mt-1" style="color: var(--text-muted)">
+      Оплата по QR-коду · Круглосуточно
+    </div>
+  </div>
+  <div
+    class="card p-5"
+    style="
+      background: linear-gradient(
+        135deg,
+        var(--card-bg),
+        var(--bg-tertiary)
+      );
+    "
+  >
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-2xl">🏦</span>
+      <span class="font-black text-lg">Цифровой рубль</span>
+    </div>
+    <p
+      class="text-sm leading-relaxed"
+      style="color: var(--text-secondary)"
+    >
+      Третья форма денег
+      <span class="text-xs" style="color: var(--text-muted)"
+        >(ст. 861 ГК РФ)</span
+      >
+    </p>
+    <div class="mt-2 text-sm" style="color: var(--accent)">
+      Полная прослеживаемость · Низкие комиссии
+    </div>
+    <div class="text-xs mt-1" style="color: var(--text-muted)">
+      На стадии внедрения (2026)
+    </div>
+  </div>
+</div>
+
+<!-- Достоинства и Недостатки -->
+<div class="grid md:grid-cols-2 gap-5">
+  <div
+    class="card p-6"
+    style="
+      background: linear-gradient(
+        135deg,
+        var(--card-bg),
+        rgba(140, 179, 106, 0.03)
+      );
+    "
+  >
+    <div class="flex items-center gap-3 mb-4">
+      <div
+        class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
+        style="background: var(--accent-glow)"
+      >
+        ✨
+      </div>
+      <span class="font-black text-xl" style="color: var(--accent)"
+        >Достоинства</span
+      >
+    </div>
+    <div class="space-y-2">
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--success)">✓</span> Безопасность —
+        блокировка карты, страхование вкладов
+      </div>
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--success)">✓</span> Скорость и
+        удобство — оплата в 1 клик
+      </div>
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--success)">✓</span> Прозрачность —
+        автоучёт расходов
+      </div>
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--success)">✓</span> Кэшбэк и бонусы
+        — возврат до 30%
+      </div>
+    </div>
+  </div>
+  <div
+    class="card p-6"
+    style="
+      background: linear-gradient(
+        135deg,
+        var(--card-bg),
+        rgba(220, 122, 90, 0.03)
+      );
+    "
+  >
+    <div class="flex items-center gap-3 mb-4">
+      <div
+        class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
+        style="background: var(--bg-tertiary)"
+      >
+        ⚠️
+      </div>
+      <span
+        class="font-black text-xl"
+        style="color: var(--text-primary)"
+        >Недостатки</span
+      >
+    </div>
+    <div class="space-y-2">
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--error)">✗</span> Зависимость от
+        интернета и электричества
+      </div>
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--error)">✗</span>
+        Кибермошенничество — фишинг, скимминг
+      </div>
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--error)">✗</span> Комиссии за
+        обслуживание и снятие
+      </div>
+      <div
+        class="flex items-center gap-2 text-sm"
+        style="color: var(--text-secondary)"
+      >
+        <span style="color: var(--error)">✗</span> Отсутствие полной
+        анонимности
+      </div>
+    </div>
+</div>
+
           </div>
         </section>
 
         <!-- ГЛАВА 2: БАНКОВСКИЕ КАРТЫ -->
         <section id="glava2" class="reveal scroll-mt-20">
-          <h2
-            class="section-accent text-3xl font-black startup-heading mb-6"
-            style="color: var(--text-primary)"
-          >
-            ГЛАВА 2. Банковские платежные карты
-          </h2>
+<!-- Заголовок в стиле Главы 1, но с вашим текстом Главы 2 -->
+<div class="mb-10 relative pl-6">
+  <!-- Градиентная полоса сбоку -->
+  <div 
+    class="absolute left-0 top-1 bottom-1 w-1.5 rounded-full" 
+    style="background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);"
+  ></div>
+
+  <span
+    class="text-xs font-semibold uppercase tracking-wider block"
+    style="color: var(--accent); letter-spacing: 0.12em"
+  >
+    ГЛАВА 2
+  </span>
+  
+  <h2
+    class="text-3xl sm:text-4xl font-black startup-heading mt-1 leading-tight"
+    style="color: var(--text-primary)"
+  >
+    <span
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start) 0%,
+          var(--gradient-end) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      "
+    >
+      Банковские
+    </span>
+    <br />платежные карты
+  </h2>
+</div>
+
+
+<!-- Далее ваш исходный блок с СБП и Цифровым рублем -->
+
           <div id="glava2-1" class="mb-6 scroll-mt-20">
-            <h3
-              class="text-2xl font-bold mb-3 flex items-center gap-2"
-              style="color: var(--text-primary)"
-            >
-              <span style="color: var(--accent)">💳</span> 2.1. Правовое
-              регулирование и виды
-            </h3>
+<div id="glava2-1" class="scroll-mt-20 mb-8 font-sans">
+  <div class="flex items-center gap-4">
+    <!-- Иконка в круге -->
+    <div
+      class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+      style="background: var(--accent-glow)"
+    >
+      <span class="text-lg">💳</span>
+    </div>
+
+    <!-- Градиентная полоска -->
+    <div 
+      class="h-8 w-1 rounded-full flex-shrink-0" 
+      style="background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))"
+    ></div>
+
+    <!-- Текст заголовка -->
+    <h3 class="text-xl sm:text-2xl font-bold tracking-tight" style="color: var(--text-primary)">
+      2.1. Правовое регулирование и виды
+    </h3>
+  </div>
+</div>
+
             <p style="color: var(--text-secondary)">
               Банковские карты —
               <span class="font-semibold" style="color: var(--accent)"
@@ -1205,75 +1750,151 @@
             </div>
           </div>
 
-          <div id="glava2-2" class="mb-6 scroll-mt-20">
-            <h3
-              class="text-2xl font-bold mb-3"
-              style="color: var(--text-primary)"
-            >
-              2.2. Механизм операций
-            </h3>
-            <div class="card p-5">
-              <div
-                class="grid gap-3 text-sm"
-                style="color: var(--text-secondary)"
-              >
-                <div class="flex items-center gap-3">
-                  <span
-                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                    style="background: var(--accent); color: white"
-                    >1</span
-                  >
-                  Держатель → операция (POS, NFC, QR, интернет)
-                </div>
-                <div class="flex items-center gap-3">
-                  <span
-                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                    style="background: var(--accent); color: white"
-                    >2</span
-                  >
-                  Эквайер → запрос в платежную систему
-                </div>
-                <div class="flex items-center gap-3">
-                  <span
-                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                    style="background: var(--accent); color: white"
-                    >3</span
-                  >
-                  Эмитент → авторизация (проверка лимитов)
-                </div>
-                <div class="flex items-center gap-3">
-                  <span
-                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                    style="background: var(--accent); color: white"
-                    >4</span
-                  >
-                  Списание → зачисление средств получателю
-                </div>
-                <div class="flex items-center gap-3">
-                  <span
-                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                    style="background: var(--accent); color: white"
-                    >5</span
-                  >
-                  Уведомление (SMS/Push) — ст.9 ФЗ №161-ФЗ
-                </div>
-              </div>
-            </div>
-            <p class="mt-3 text-sm" style="color: var(--text-secondary)">
-              <span class="font-semibold">Защита:</span> 3D Secure, токенизация,
-              биометрия.
-            </p>
-          </div>
+<div id="glava2-2" class="mb-10 scroll-mt-20">
+<div id="glava2-2" class="scroll-mt-20 mb-8">
+  <div class="flex items-center gap-4">
+    <!-- Иконка в круге (адаптировал под тему операций) -->
+    <div
+      class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+      style="background: var(--accent-glow)"
+    >
+      <span class="text-lg">⚙️</span>
+    </div>
+
+    <!-- Градиентная полоска -->
+    <div 
+      class="h-8 w-1 rounded-full flex-shrink-0" 
+      style="background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))"
+    ></div>
+
+    <!-- Текст заголовка -->
+    <h3 class="text-xl sm:text-2xl font-bold tracking-tight" style="color: var(--text-primary)">
+      2.2. Механизм операций
+    </h3>
+  </div>
+</div>
+
+
+<div id="glava2-2-flow" class="mb-10 scroll-mt-20">
+  <!-- Визуальный флоу транзакции -->
+  <div class="relative space-y-6 md:space-y-8">
+    <!-- Вертикальная линия связи с градиентом (адаптивная) -->
+    <div 
+      class="absolute left-[19px] md:left-[23px] top-4 bottom-4 w-0.5 opacity-20" 
+      style="background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))"
+    ></div>
+
+    <!-- Шаг 1 -->
+    <div class="relative flex items-start gap-4 md:gap-6 group">
+      <div class="z-10 flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-2xl shadow-sm flex items-center justify-center font-bold text-sm transition-all group-hover:scale-110 group-hover:shadow-md" 
+           style="background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent)">
+        1
+      </div>
+      <div class="pt-1.5 md:pt-2.5">
+        <h4 class="font-bold text-base" style="color: var(--text-primary)">Инициация</h4>
+        <p class="text-sm opacity-70 mt-1" style="color: var(--text-secondary)">
+          Держатель → операция 
+          <span class="inline-flex flex-wrap gap-1 mt-1 block opacity-50 text-xs font-medium uppercase tracking-wider">
+            (POS • NFC • QR • Интернет)
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Шаг 2 -->
+    <div class="relative flex items-start gap-4 md:gap-6 group">
+      <div class="z-10 flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-2xl shadow-sm flex items-center justify-center font-bold text-sm transition-all group-hover:scale-110 group-hover:shadow-md" 
+           style="background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent)">
+        2
+      </div>
+      <div class="pt-1.5 md:pt-2.5">
+        <h4 class="font-bold text-base" style="color: var(--text-primary)">Запрос эквайера</h4>
+        <p class="text-sm opacity-70 mt-1" style="color: var(--text-secondary)">Передача данных в платежную систему для верификации</p>
+      </div>
+    </div>
+
+    <!-- Шаг 3 -->
+    <div class="relative flex items-start gap-4 md:gap-6 group">
+      <div class="z-10 flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-2xl shadow-sm flex items-center justify-center font-bold text-sm transition-all group-hover:scale-110 group-hover:shadow-md" 
+           style="background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent)">
+        3
+      </div>
+      <div class="pt-1.5 md:pt-2.5">
+        <h4 class="font-bold text-base" style="color: var(--text-primary)">Авторизация эмитента</h4>
+        <p class="text-sm opacity-70 mt-1" style="color: var(--text-secondary)">Проверка лимитов и подтверждение возможности списания</p>
+      </div>
+    </div>
+
+    <!-- Шаг 4 -->
+    <div class="relative flex items-start gap-4 md:gap-6 group">
+      <div class="z-10 flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-2xl shadow-sm flex items-center justify-center font-bold text-sm transition-all group-hover:scale-110 group-hover:shadow-md" 
+           style="background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent)">
+        4
+      </div>
+      <div class="pt-1.5 md:pt-2.5">
+        <h4 class="font-bold text-base" style="color: var(--text-primary)">Клиринг и расчет</h4>
+        <p class="text-sm opacity-70 mt-1" style="color: var(--text-secondary)">Списание средств и зачисление на счет получателя</p>
+      </div>
+    </div>
+
+    <!-- Шаг 5 -->
+    <div class="relative flex items-start gap-4 md:gap-6 group">
+      <div class="z-10 flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-2xl shadow-sm flex items-center justify-center font-bold text-sm transition-all group-hover:scale-110 group-hover:shadow-md" 
+           style="background: var(--accent-soft); color: var(--success); border: 1px solid var(--success)">
+        5
+      </div>
+      <div class="pt-1.5 md:pt-2.5">
+        <h4 class="font-bold text-base" style="color: var(--success)">Завершение</h4>
+        <p class="text-sm opacity-70 mt-1" style="color: var(--text-secondary)">
+          Уведомление (SMS/Push) — 
+          <span class="font-bold opacity-100 border-b border-dotted border-current pb-0.5">ст.9 ФЗ №161-ФЗ</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Технологии защиты (адаптивный футер) -->
+  <div class="mt-10 p-5 md:p-6 rounded-[2rem] border border-dashed transition-colors hover:bg-gray-50/50" style="border-color: var(--bg-tertiary)">
+    <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+      <span class="text-xs font-bold uppercase tracking-[0.15em] opacity-40" style="color: var(--text-primary)">Защита данных:</span>
+      <div class="flex flex-wrap gap-2 md:gap-3">
+        <span class="px-4 py-1.5 rounded-full text-[11px] font-bold shadow-sm border border-gray-100" style="background: var(--card-bg); color: var(--text-primary)">3D Secure 2.0</span>
+        <span class="px-4 py-1.5 rounded-full text-[11px] font-bold shadow-sm border border-gray-100" style="background: var(--card-bg); color: var(--text-primary)">Токенизация</span>
+        <span class="px-4 py-1.5 rounded-full text-[11px] font-bold shadow-sm border border-gray-100" style="background: var(--card-bg); color: var(--text-primary)">Биометрия</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
 
           <div id="glava2-3" class="scroll-mt-20">
-            <h3
-              class="text-2xl font-bold mb-4"
-              style="color: var(--text-primary)"
-            >
-              2.3. Достоинства и недостатки
-            </h3>
+<div id="glava2-3" class="scroll-mt-20 mb-8">
+  <div class="flex items-center gap-4">
+    <!-- Иконка в круге -->
+    <div
+      class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+      style="background: var(--accent-glow)"
+    >
+      <span class="text-lg">📊</span>
+    </div>
+
+    <!-- Градиентная полоска -->
+    <div 
+      class="h-8 w-1 rounded-full flex-shrink-0" 
+      style="background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end))"
+    ></div>
+
+    <!-- Текст заголовка -->
+    <h3 class="text-xl sm:text-2xl font-bold tracking-tight" style="color: var(--text-primary)">
+      2.3. Достоинства и недостатки
+    </h3>
+  </div>
+</div>
+
             <div class="grid md:grid-cols-2 gap-6">
-              <div class="card p-6 advantage-card">
+              <div class="card p-6 card">
                 <div class="text-3xl mb-2">🚀</div>
                 <div
                   class="font-black text-xl mb-3"
@@ -1306,7 +1927,7 @@
                   <li>• Интеграция с СБП и цифровыми сервисами</li>
                 </ul>
               </div>
-              <div class="card p-6 disadvantage-card">
+              <div class="card p-6 card">
                 <div class="text-3xl mb-2">⚠️</div>
                 <div
                   class="font-black text-xl mb-3"
@@ -1348,47 +1969,117 @@
           </div>
         </section>
 
-        <!-- ЗАКЛЮЧЕНИЕ -->
-        <section
-          id="zaklyuchenie"
-          class="reveal scroll-mt-20 rounded-3xl p-8 card"
-          style="border-left: 4px solid var(--accent)"
-        >
-          <h2
-            class="section-accent text-3xl font-black startup-heading mb-4"
-            style="color: var(--text-primary)"
-          >
-            ЗАКЛЮЧЕНИЕ
-          </h2>
-          <p
-            class="text-lg leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
-            В РФ расчеты и платежи строятся на принципах
-            <span class="font-bold"
-              >свободы формы, безопасности и цифровизации</span
-            >. Наличные сохраняют нишу в мелких операциях, но доминируют
-            безналичные формы (ГК РФ, Положение №762-П).
-            <span class="font-bold" style="color: var(--accent)"
-              >Банковские карты</span
-            >
-            — наиболее динамичный инструмент, интегрированный в НПС. Перспективы
-            —
-            <span class="font-semibold" style="color: var(--accent)"
-              >СБП, цифровой рубль</span
-            >
-            при сохранении баланса с наличными.
-          </p>
-        </section>
+<section id="zaklyuchenie" class="reveal scroll-mt-20 mb-12">
+  
+  <!-- Заголовок с боковой полоской -->
+  <div class="mb-10 relative pl-6">
+    <!-- Градиентная полоса сбоку (только у заголовка) -->
+    <div 
+      class="absolute left-0 top-1 bottom-1 w-1.5 rounded-full shadow-sm" 
+      style="background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);"
+    ></div>
+
+    <span
+      class="text-xs font-semibold uppercase tracking-wider block"
+      style="color: var(--accent); letter-spacing: 0.12em"
+    >
+      Итоги работы
+    </span>
+    
+    <h2
+      class="text-3xl sm:text-4xl font-black startup-heading mt-1 leading-tight"
+      style="color: var(--text-primary)"
+    >
+      <span
+        style="
+          background: linear-gradient(
+            135deg,
+            var(--gradient-start) 0%,
+            var(--gradient-end) 100%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        "
+      >
+        Заключение
+      </span>
+      <br />и перспективы развития
+    </h2>
+  </div>
+
+  <!-- Карточка контента (без боковой полоски заголовка) -->
+  <div class="card p-8 rounded-[2rem] border-l-4 shadow-sm" 
+       style="background: var(--card-bg); border-left-color: var(--accent); border-top-color: var(--bg-tertiary); border-right-color: var(--bg-tertiary); border-bottom-color: var(--bg-tertiary);">
+    
+    <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary)">
+      В РФ расчеты и платежи строятся на принципах
+      <span class="font-bold" style="color: var(--text-primary)">свободы формы, безопасности и цифровизации</span>. 
+      Наличные сохраняют нишу в мелких операциях, но доминируют безналичные формы 
+      <span class="text-sm opacity-50 font-normal italic">(ГК РФ, Положение №762-П)</span>.
+    </p>
+    
+    <div class="space-y-4">
+      <div class="flex items-center gap-3 p-4 rounded-xl border border-dashed transition-all" style="border-color: var(--bg-tertiary)">
+        <div class="w-2 h-2 rounded-full flex-shrink-0 shadow-sm" style="background: var(--accent)"></div>
+        <p class="text-sm leading-snug" style="color: var(--text-secondary)">
+          <strong style="color: var(--text-primary)">Банковские карты</strong> — наиболее динамичный инструмент, интегрированный в НПС.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 p-5 rounded-2xl" style="background: var(--accent-soft)">
+        <span class="text-2xl animate-pulse">🚀</span>
+        <p class="text-sm font-bold" style="color: var(--text-primary)">
+          Перспективы — <span style="color: var(--accent)">СБП, цифровой рубль</span> при сохранении баланса с наличными.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <!-- ЛИТЕРАТУРА -->
         <section id="literatura" class="reveal scroll-mt-20">
-          <h2
-            class="section-accent text-3xl font-black startup-heading mb-5"
-            style="color: var(--text-primary)"
-          >
-            СПИСОК ЛИТЕРАТУРЫ
-          </h2>
+<section id="spisok-literatury" class="reveal scroll-mt-20 mb-12">
+  
+  <!-- Заголовок с боковой полоской -->
+  <div class="mb-10 relative pl-6">
+    <!-- Градиентная полоса сбоку (только у заголовка) -->
+    <div 
+      class="absolute left-0 top-1 bottom-1 w-1.5 rounded-full" 
+      style="background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);"
+    ></div>
+
+    <span
+      class="text-xs font-semibold uppercase tracking-wider block"
+      style="color: var(--accent); letter-spacing: 0.12em"
+    >
+      Библиография
+    </span>
+    
+    <h2
+      class="text-3xl sm:text-4xl font-black startup-heading mt-1 leading-tight"
+      style="color: var(--text-primary)"
+    >
+      <span
+        style="
+          background: linear-gradient(
+            135deg,
+            var(--gradient-start) 0%,
+            var(--gradient-end) 100%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        "
+      >
+        Список
+      </span>
+      <br />литературы
+    </h2>
+  </div>
+</section>
+
           <ol
             class="list-decimal pl-6 space-y-2 text-sm"
             style="color: var(--text-secondary)"
