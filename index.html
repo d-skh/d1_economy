@@ -1,0 +1,1553 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Доклад по дисциплине «Экономическая культура» — Сухоревский Д. А. — Расчеты и платежи в РФ"
+    />
+    <title>Доклад • Расчеты и платежи в РФ • Сухоревский Д. А.</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Unbounded:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Montserrat+Alternates:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Добавьте в конец существующего <style> блока */
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      .card,
+      .stat-block,
+      .advantage-card,
+      .disadvantage-card {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+      }
+
+      /* Для всех контейнеров с гридом на мобильных */
+      @media (max-width: 640px) {
+        .grid {
+          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        }
+
+        .flex {
+          flex-wrap: wrap;
+        }
+
+        .card {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+      /* ---------- СЕРО-ЖЕЛТАЯ ТЕМА (МИНИМАЛИСТИЧНАЯ) ---------- */
+      :root {
+        /* Primary colors - холодный серый */
+        --bg-primary: #fafaf9;
+        --bg-secondary: #f4f4f2;
+        --bg-tertiary: #eeeeea;
+        --text-primary: #2c2c28;
+        --text-secondary: #5c5c56;
+        --text-muted: #8e8e86;
+
+        /* Accent colors - лимонно-желтый */
+        --accent: #f5b81b;
+        --accent-light: #ffcd4a;
+        --accent-dark: #e09d0a;
+        --accent-soft: #fffae6;
+        --accent-glow: rgba(245, 184, 27, 0.1);
+
+        /* Secondary accent - пепельный */
+        --secondary: #b8b8aa;
+        --secondary-light: #ffdc6a;
+        --secondary-soft: #f8f8f0;
+
+        /* Border & UI */
+        --border-light: #e6e6df;
+        --border-medium: #cecec2;
+        --card-bg: #ffffff;
+        --card-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.03), 0 6px 14px rgba(0, 0, 0, 0.02);
+        --hover-bg: #fdfdf8;
+
+        /* Status */
+        --success: #8cb36a;
+        --warning: #f5b81b;
+        --error: #dc7a5a;
+
+        /* Gradient accents */
+        --gradient-start: #f5b81b;
+        --gradient-end: #b8b8aa;
+      }
+
+      html.dark {
+        --bg-primary: #1c1c1a;
+        --bg-secondary: #242422;
+        --bg-tertiary: #2c2c28;
+        --text-primary: #f5f5e8;
+        --text-secondary: #cbcbb8;
+        --text-muted: #92928a;
+
+        --accent: #ffcd4a;
+        --accent-light: #ffde7a;
+        --accent-dark: #f5b81b;
+        --accent-soft: #2a2a20;
+        --accent-glow: rgba(255, 205, 74, 0.12);
+
+        --secondary: #4e4e48;
+        --secondary-light: #ffff80;
+        --secondary-soft: #2a2a24;
+
+        --border-light: #343430;
+        --border-medium: #484842;
+        --card-bg: #242422;
+        --card-shadow:
+          0 1px 3px rgba(0, 0, 0, 0.3), 0 6px 14px rgba(0, 0, 0, 0.2);
+        --hover-bg: #2c2c28;
+
+        --success: #8cb36a;
+        --warning: #ffcd4a;
+        --error: #dc7a5a;
+
+        --gradient-start: #ffcd4a;
+        --gradient-end: #4e4e48;
+      }
+
+      /* Базовые стили с использованием переменных */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition:
+          background-color 0.25s ease,
+          border-color 0.25s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      body {
+        font-family: "Onest", system-ui, sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.5;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Типографика */
+      .startup-heading {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      /* Акцентные элементы */
+      .accent-text {
+        color: var(--accent);
+      }
+
+      .accent-bg {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+      }
+
+      .accent-border-bottom {
+        position: relative;
+      }
+
+      .section-accent {
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-accent::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 70px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          var(--secondary-light)
+        );
+        border-radius: 3px;
+      }
+
+      /* Навигация */
+      .nav-link {
+        position: relative;
+        color: var(--text-secondary);
+        transition: color 0.2s;
+      }
+
+      .nav-link:hover {
+        color: var(--accent);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+        transition: width 0.25s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Карточки */
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-light);
+        border-radius: 1.25rem;
+        transition: all 0.25s ease;
+        box-shadow: var(--card-shadow);
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.15);
+        border-color: var(--border-medium);
+      }
+
+      /* Бейджи */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.875rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .badge-accent {
+        background: var(--accent-glow);
+        color: var(--accent);
+      }
+
+      .badge-secondary {
+        background: var(--secondary-soft);
+        color: var(--secondary);
+      }
+
+      /* Кнопки */
+      .btn-icon {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-light);
+        border-radius: 9999px;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+
+      .btn-icon:hover {
+        background: var(--accent-glow);
+        border-color: var(--accent);
+        transform: scale(1.05);
+      }
+
+      /* DRAWER */
+      .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+
+      .drawer-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(85%, 380px);
+        height: 100%;
+        background: var(--bg-primary);
+        border-left: 1px solid var(--border-light);
+        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 1001;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+        overflow-y: auto;
+      }
+
+      .drawer.open {
+        transform: translateX(0);
+      }
+
+      /* Анимация появления */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Стили для списков и блоков */
+      .stat-block {
+        background: var(--accent-glow);
+        border-left: 3px solid var(--accent);
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      .advantage-card {
+        background: linear-gradient(135deg, var(--accent-glow), transparent);
+        border: 1px solid var(--border-light);
+      }
+
+      .disadvantage-card {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-light);
+      }
+
+      /* Скроллбар */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-tertiary);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-light);
+      }
+
+      /* Дополнительные утилиты */
+      .border-accent {
+        border-color: var(--accent);
+      }
+
+      .hover\:bg-accent-glow:hover {
+        background: var(--accent-glow);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- НАВИГАЦИЯ -->
+    <nav
+      class="sticky top-0 z-50 backdrop-blur-xl border-b"
+      style="
+        background: rgba(var(--bg-primary-rgb, 255, 255, 255), 0.85);
+        background-color: color-mix(
+          in srgb,
+          var(--bg-primary) 85%,
+          transparent
+        );
+      "
+    >
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="h-16 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div
+              class="hidden sm:flex w-9 h-9 rounded-xl items-center justify-center"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  var(--accent),
+                  var(--accent-light)
+                );
+              "
+            >
+              <span class="text-white font-black text-lg">₽</span>
+            </div>
+            <div>
+              <h1
+                class="text-sm sm:text-base font-black startup-heading"
+                style="color: var(--text-primary)"
+              >
+                Сухоревский Д. А.
+              </h1>
+              <p
+                class="text-[9px] sm:text-[10px]"
+                style="color: var(--text-muted)"
+              >
+                Доклад • Экономическая культура • 2026
+              </p>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+            <a
+              href="#vvedenie"
+              class="nav-link"
+              style="color: var(--text-secondary)"
+              >Введение</a
+            >
+            <a
+              href="#glava1"
+              class="nav-link"
+              style="color: var(--text-secondary)"
+              >Глава 1</a
+            >
+            <a
+              href="#glava2"
+              class="nav-link"
+              style="color: var(--text-secondary)"
+              >Глава 2</a
+            >
+            <a
+              href="#zaklyuchenie"
+              class="nav-link"
+              style="color: var(--text-secondary)"
+              >Заключение</a
+            >
+            <a
+              href="#literatura"
+              class="nav-link"
+              style="color: var(--text-secondary)"
+              >Литература</a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <button
+              onclick="toggleTheme()"
+              id="theme-toggle"
+              class="btn-icon w-9 h-9 flex items-center justify-center text-lg"
+            >
+              <span id="theme-icon">☀️</span>
+            </button>
+            <!-- Кнопка для перехода на Яндекс.Диск -->
+            <a
+              href="https://disk.yandex.ru/i/kUKnWHBAhExgtA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-icon w-9 h-9 flex items-center justify-center text-lg"
+              title="Смотреть презентацию"
+            >
+              📄
+            </a>
+            <button
+              id="burger-btn"
+              class="btn-icon w-9 h-9 flex items-center justify-center lg:hidden"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- DRAWER -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <div id="drawer" class="drawer">
+      <div
+        class="p-5 border-b flex justify-between items-center"
+        style="border-color: var(--border-light)"
+      >
+        <span
+          class="text-xl font-black startup-heading"
+          style="color: var(--accent)"
+          >Меню</span
+        >
+        <button
+          id="close-drawer"
+          class="btn-icon w-8 h-8 flex items-center justify-center"
+        >
+          ✕
+        </button>
+      </div>
+      <div class="p-5 flex flex-col gap-1">
+        <a
+          href="#vvedenie"
+          class="drawer-link py-2 font-semibold hover:text-accent"
+          style="color: var(--text-primary)"
+          >Введение</a
+        >
+        <a
+          href="#glava1"
+          class="drawer-link py-2 font-semibold mt-1"
+          style="color: var(--text-primary)"
+          >Глава 1. Правовые основы</a
+        >
+        <a
+          href="#glava1-1"
+          class="drawer-sublink pl-4 text-sm py-1"
+          style="color: var(--text-muted)"
+          >1.1 Понятие и регулирование</a
+        >
+        <a
+          href="#glava1-2"
+          class="drawer-sublink pl-4 text-sm py-1"
+          style="color: var(--text-muted)"
+          >1.2 Наличные расчеты</a
+        >
+        <a
+          href="#glava1-3"
+          class="drawer-sublink pl-4 text-sm py-1"
+          style="color: var(--text-muted)"
+          >1.3 Безналичные расчеты</a
+        >
+        <a
+          href="#glava2"
+          class="drawer-link py-2 font-semibold mt-2"
+          style="color: var(--text-primary)"
+          >Глава 2. Банковские карты</a
+        >
+        <a
+          href="#glava2-1"
+          class="drawer-sublink pl-4 text-sm py-1"
+          style="color: var(--text-muted)"
+          >2.1 Правовое регулирование</a
+        >
+        <a
+          href="#glava2-2"
+          class="drawer-sublink pl-4 text-sm py-1"
+          style="color: var(--text-muted)"
+          >2.2 Механизм операций</a
+        >
+        <a
+          href="#glava2-3"
+          class="drawer-sublink pl-4 text-sm py-1"
+          style="color: var(--text-muted)"
+          >2.3 Достоинства и недостатки</a
+        >
+        <a
+          href="#zaklyuchenie"
+          class="drawer-link py-2 font-semibold mt-2"
+          style="color: var(--text-primary)"
+          >Заключение</a
+        >
+        <a
+          href="#literatura"
+          class="drawer-link py-2 font-semibold"
+          style="color: var(--text-primary)"
+          >Литература</a
+        >
+        <button
+          id="drawer-close-bottom"
+          class="mt-6 w-full py-2.5 rounded-full text-sm font-medium btn-icon"
+        >
+          Закрыть
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="w-full max-w-[1600px] mx-auto flex px-4 sm:px-6 lg:px-10 gap-8 overflow-hidden"
+    >
+      <!-- SIDEBAR -->
+      <div
+        class="hidden xl:block w-72 shrink-0 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-5 border-r"
+        style="border-color: var(--border-light)"
+      >
+        <div
+          class="text-xs font-bold tracking-wider uppercase mb-4"
+          style="color: var(--accent)"
+        >
+          Содержание
+        </div>
+        <div class="space-y-1">
+          <a
+            href="#vvedenie"
+            class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+          >
+            <span style="color: var(--accent)" class="text-xs">01</span>
+            Введение
+          </a>
+          <div
+            class="text-[10px] font-bold pl-3 pt-2"
+            style="color: var(--text-muted)"
+          >
+            ГЛАВА 1
+          </div>
+          <a
+            href="#glava1-1"
+            class="block px-3 py-1.5 text-sm pl-6 rounded-lg transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+            >1.1 Понятие расчетов</a
+          >
+          <a
+            href="#glava1-2"
+            class="block px-3 py-1.5 text-sm pl-6 rounded-lg transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+            >1.2 Наличные расчеты</a
+          >
+          <a
+            href="#glava1-3"
+            class="block px-3 py-1.5 text-sm pl-6 rounded-lg transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+            >1.3 Безналичные формы</a
+          >
+          <div
+            class="text-[10px] font-bold pl-3 pt-2"
+            style="color: var(--text-muted)"
+          >
+            ГЛАВА 2
+          </div>
+          <a
+            href="#glava2-1"
+            class="block px-3 py-1.5 text-sm pl-6 rounded-lg transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+            >2.1 Виды карт</a
+          >
+          <a
+            href="#glava2-2"
+            class="block px-3 py-1.5 text-sm pl-6 rounded-lg transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+            >2.2 Механизм операций</a
+          >
+          <a
+            href="#glava2-3"
+            class="block px-3 py-1.5 text-sm pl-6 rounded-lg transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+            >2.3 Плюсы и минусы</a
+          >
+          <a
+            href="#zaklyuchenie"
+            class="flex items-center gap-3 px-3 py-2 mt-3 rounded-xl transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+          >
+            <span style="color: var(--accent)" class="text-xs">02</span>
+            Заключение
+          </a>
+          <a
+            href="#literatura"
+            class="flex items-center gap-3 px-3 py-2 rounded-xl transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseover="this.style.background = 'var(--hover-bg)'"
+            onmouseout="this.style.background = 'transparent'"
+          >
+            <span style="color: var(--accent)" class="text-xs">03</span>
+            Литература
+          </a>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <main
+        class="flex-1 max-w-4xl mx-auto xl:mx-0 py-8 space-y-16 min-w-0 overflow-x-hidden"
+      >
+        <!-- Hero -->
+        <div class="reveal text-center md:text-left">
+          <div
+            class="flex flex-wrap justify-center md:justify-start gap-2 mb-5"
+          >
+            <span
+              class="badge text-xs sm:text-sm"
+              style="
+                background: var(--bg-tertiary);
+                color: var(--text-secondary);
+              "
+            >
+              МИНОБРНАУКИ РФ
+            </span>
+            <span
+              class="badge text-xs sm:text-sm"
+              style="background: var(--accent-glow); color: var(--accent)"
+            >
+              РТУ МИРЭА
+            </span>
+          </div>
+
+          <h1
+            class="startup-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1]"
+            style="color: var(--text-primary)"
+          >
+            Осуществление расчетов & платежей
+          </h1>
+
+          <div
+            class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-6 text-sm sm:text-base"
+          >
+            <div class="text-center sm:text-left">
+              <span class="text-xs sm:text-sm" style="color: var(--text-muted)">
+                Студент группы ТКБО-01-24
+              </span>
+              <br />
+              <span
+                class="text-lg sm:text-xl font-black block mt-0.5"
+                style="color: var(--text-primary)"
+              >
+                Сухоревский Д. А.
+              </span>
+            </div>
+
+            <div
+              class="hidden sm:block w-px h-10"
+              style="background: var(--border-light)"
+            ></div>
+
+            <div class="text-center sm:text-left">
+              <span class="text-xs sm:text-sm" style="color: var(--text-muted)">
+                Преподаватель
+              </span>
+              <br />
+              <span
+                class="text-lg sm:text-xl font-black block mt-0.5"
+                style="color: var(--text-primary)"
+              >
+                Быстров А. В.
+              </span>
+            </div>
+
+            <div class="sm:ml-auto text-center sm:text-right mt-2 sm:mt-0">
+              <span class="text-xs sm:text-sm" style="color: var(--text-muted)">
+                Москва, 2026
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ВВЕДЕНИЕ -->
+        <section id="vvedenie" class="reveal scroll-mt-20">
+          <h2
+            class="section-accent text-3xl font-black startup-heading mb-6"
+            style="color: var(--text-primary)"
+          >
+            ВВЕДЕНИЕ
+          </h2>
+          <div
+            class="space-y-4 leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            <p>
+              Расчеты и платежи — основа экономических отношений. В РФ они
+              регулируются
+              <span class="font-semibold" style="color: var(--accent)"
+                >Гражданским кодексом, банковским правом и актами Банка
+                России</span
+              >. Актуальность темы обусловлена цифровизацией, развитием
+              <span class="font-semibold" style="color: var(--accent)"
+                >СБП</span
+              >
+              и внедрением
+              <span class="font-semibold" style="color: var(--secondary)"
+                >цифрового рубля</span
+              >.
+            </p>
+            <p>
+              <span class="font-bold" style="color: var(--accent)"
+                >🎯 Цель доклада</span
+              >
+              — дать исчерпывающее описание видов расчетов и платежей по
+              законодательству РФ, анализ их достоинств и недостатков, детальный
+              разбор банковских карт.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
+              <div
+                class="card p-4"
+                style="border-left: 3px solid var(--accent)"
+              >
+                📌 Правовые основы наличных/безналичных
+              </div>
+              <div
+                class="card p-4"
+                style="border-left: 3px solid var(--accent)"
+              >
+                📌 Все формы по ГК РФ и №762-П
+              </div>
+              <div
+                class="card p-4"
+                style="border-left: 3px solid var(--accent)"
+              >
+                📌 Анализ преимуществ и рисков
+              </div>
+              <div
+                class="card p-4"
+                style="border-left: 3px solid var(--accent)"
+              >
+                📌 Банковские карты по ФЗ №161-ФЗ
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ГЛАВА 1 -->
+        <section id="glava1" class="reveal scroll-mt-20">
+          <h2
+            class="section-accent text-3xl font-black startup-heading mb-6"
+            style="color: var(--text-primary)"
+          >
+            ГЛАВА 1. Правовые основы и виды расчетов
+          </h2>
+
+          <div id="glava1-1" class="mb-8 scroll-mt-20">
+            <h3
+              class="text-2xl font-bold mb-3 flex items-center gap-2"
+              style="color: var(--text-primary)"
+            >
+              <span style="color: var(--accent)">⚖️</span> 1.1. Понятие и
+              правовое регулирование
+            </h3>
+            <p style="color: var(--text-secondary)">
+              <span class="font-semibold">Рубль</span> — законное платежное
+              средство (ст. 140 ГК РФ).
+              <span class="font-semibold">Расчеты</span> — исполнение денежных
+              обязательств, <span class="font-semibold">платежи</span> — любая
+              уплата денег. Ключевые НПА:
+              <span
+                class="badge-accent badge"
+                style="background: var(--accent-glow); color: var(--accent)"
+                >ГК РФ (гл.46)</span
+              >,
+              <span
+                class="badge-accent badge"
+                style="background: var(--accent-glow); color: var(--accent)"
+                >ФЗ №161-ФЗ</span
+              >,
+              <span
+                class="badge-accent badge"
+                style="background: var(--accent-glow); color: var(--accent)"
+                >Положение №762-П</span
+              >. Для юрлиц — преимущественно безналичные расчеты, для граждан —
+              свобода выбора.
+            </p>
+          </div>
+
+          <div id="glava1-2" class="mb-8 scroll-mt-20">
+            <h3
+              class="text-2xl font-bold mb-3 flex items-center gap-2"
+              style="color: var(--text-primary)"
+            >
+              <span style="color: var(--accent)">💰</span> 1.2. Наличные расчеты
+            </h3>
+            <p style="color: var(--text-secondary)">
+              <span class="font-semibold">Лимит для юрлиц/ИП:</span>
+              <span class="font-bold" style="color: var(--accent)"
+                >100 000 ₽</span
+              >
+              по одному договору. Для граждан — без ограничений. ККТ обязательна
+              в рознице.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+              <div class="card p-5 advantage-card">
+                <span class="text-2xl">✅</span>
+                <span class="font-bold">Достоинства:</span> универсальность,
+                анонимность, мгновенность, отсутствие комиссий.
+              </div>
+              <div class="card p-5 disadvantage-card">
+                <span class="text-2xl">❌</span>
+                <span class="font-bold">Недостатки:</span> риск кражи, затраты
+                на инкассацию, нет автоконтроля, нельзя дистанционно.
+              </div>
+            </div>
+            <div
+              class="mt-4 inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full"
+              style="background: var(--bg-tertiary); color: var(--text-muted)"
+            >
+              <span style="color: var(--accent)">📊</span> Доля наличных в
+              рознице — ~12% (данные ЦБ РФ, 2026)
+            </div>
+          </div>
+
+          <div id="glava1-3" class="scroll-mt-20">
+            <h3
+              class="text-2xl font-bold mb-5 flex items-center gap-2"
+              style="color: var(--text-primary)"
+            >
+              <span style="color: var(--accent)">💳</span> 1.3. Безналичные
+              расчеты: формы и анализ
+            </h3>
+            <p class="mb-5" style="color: var(--text-secondary)">
+              Безналичные расчеты — перевод денежных средств банками.
+              <span class="font-bold" style="color: var(--accent)"
+                >7 основных форм</span
+              >
+              согласно ГК РФ и Положению №762-П:
+            </p>
+
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8"
+            >
+              <div class="card p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">💳</span
+                  ><span class="font-bold" style="color: var(--accent)"
+                    >Платежные поручения</span
+                  >
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Самая массовая форма. Простота, быстрота, дистанционное
+                  исполнение.
+                </p>
+                <div class="mt-2 text-xs" style="color: var(--accent)">
+                  ✔ Мгновенные переводы через СБП
+                </div>
+              </div>
+              <div class="card p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">🔐</span
+                  ><span class="font-bold" style="color: var(--accent)"
+                    >Аккредитив</span
+                  >
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Высокая защита сделок, банковская гарантия. Сложный
+                  документооборот, дорого.
+                </p>
+              </div>
+              <div class="card p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">📝</span
+                  ><span class="font-bold" style="color: var(--accent)"
+                    >Чеки</span
+                  >
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Ценная бумага. Ограниченное применение в РФ, риск подделки.
+                </p>
+              </div>
+              <div class="card p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">📦</span
+                  ><span class="font-bold" style="color: var(--accent)"
+                    >Инкассо</span
+                  >
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Контроль исполнения обязательств. Длительность операций,
+                  требует акцепта.
+                </p>
+              </div>
+              <div class="card p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">🔄</span
+                  ><span class="font-bold" style="color: var(--accent)"
+                    >Прямое дебетование</span
+                  >
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Идеально для коммуналки, подписок. Списание с предварительным
+                  согласием.
+                </p>
+              </div>
+              <div class="card p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">📱</span
+                  ><span class="font-bold" style="color: var(--accent)"
+                    >Электронные кошельки</span
+                  >
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Скорость, лимиты до 60 000 ₽, анонимность в пределах норм.
+                </p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5 my-6">
+              <div
+                class="card p-5"
+                style="border-left: 3px solid var(--accent)"
+              >
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">⚡</span
+                  ><span class="font-black text-lg"
+                    >Система быстрых платежей (СБП)</span
+                  >
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Мгновенные переводы по номеру телефона.
+                  <span class="font-semibold" style="color: var(--accent)"
+                    >До 100 000 ₽/мес бесплатно</span
+                  >, комиссия 0–0,5%. Оплата по QR-коду, круглосуточно.
+                </p>
+                <div class="mt-2 text-sm" style="color: var(--accent)">
+                  ⚠️ Требуется интернет, сложный возврат при ошибке.
+                </div>
+              </div>
+              <div class="card p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-2xl">🏦</span
+                  ><span class="font-black text-lg">Цифровой рубль</span>
+                </div>
+                <p style="color: var(--text-secondary)">
+                  Третья форма денег (ст. 861 ГК РФ).
+                  <span class="font-semibold">Полная прослеживаемость</span>,
+                  низкие комиссии, офлайн-режим в перспективе. На стадии
+                  внедрения (2026).
+                </p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-8">
+              <div class="card p-6 advantage-card">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 rounded-full flex items-center justify-center text-2xl"
+                    style="background: var(--accent-glow)"
+                  >
+                    ✨
+                  </div>
+                  <span class="font-black text-xl" style="color: var(--accent)"
+                    >Достоинства</span
+                  >
+                </div>
+                <ul class="space-y-3" style="color: var(--text-secondary)">
+                  <li class="flex gap-2">
+                    <span style="color: var(--accent)">✓</span>
+                    <span
+                      ><span class="font-semibold">Безопасность</span> —
+                      блокировка карты, страхование вкладов</span
+                    >
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--accent)">✓</span>
+                    <span
+                      ><span class="font-semibold">Скорость и удобство</span> —
+                      мобильные приложения, оплата в 1 клик</span
+                    >
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--accent)">✓</span>
+                    <span
+                      ><span class="font-semibold">Прозрачность</span> —
+                      автоматический учет расходов, история операций</span
+                    >
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--accent)">✓</span>
+                    <span>Снижение риска кражи наличных, гигиеничность</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--accent)">✓</span>
+                    <span
+                      ><span class="font-semibold">Кэшбэк и бонусы</span> —
+                      возврат до 30% от покупок</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="card p-6 disadvantage-card">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 rounded-full flex items-center justify-center text-2xl"
+                    style="background: var(--bg-tertiary)"
+                  >
+                    ⚠️
+                  </div>
+                  <span
+                    class="font-black text-xl"
+                    style="color: var(--text-primary)"
+                    >Недостатки</span
+                  >
+                </div>
+                <ul class="space-y-3" style="color: var(--text-secondary)">
+                  <li class="flex gap-2">
+                    <span style="color: var(--text-muted)">✗</span>
+                    <span
+                      ><span class="font-semibold"
+                        >Зависимость от инфраструктуры</span
+                      >
+                      — интернет, электричество, терминалы</span
+                    >
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--text-muted)">✗</span>
+                    <span
+                      ><span class="font-semibold">Кибермошенничество</span> —
+                      фишинг, скимминг, социальная инженерия</span
+                    >
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--text-muted)">✗</span>
+                    <span
+                      ><span class="font-semibold">Комиссии</span> — за
+                      обслуживание, снятие наличных, конвертацию валют</span
+                    >
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--text-muted)">✗</span>
+                    <span
+                      ><span class="font-semibold"
+                        >Отсутствие полной анонимности</span
+                      >
+                      — банки контролируют транзакции</span
+                    >
+                  </li>
+                  <li class="flex gap-2">
+                    <span style="color: var(--text-muted)">✗</span>
+                    <span
+                      ><span class="font-semibold">Технические сбои</span> —
+                      ошибки терминалов, проблемы с серверами</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ГЛАВА 2: БАНКОВСКИЕ КАРТЫ -->
+        <section id="glava2" class="reveal scroll-mt-20">
+          <h2
+            class="section-accent text-3xl font-black startup-heading mb-6"
+            style="color: var(--text-primary)"
+          >
+            ГЛАВА 2. Банковские платежные карты
+          </h2>
+          <div id="glava2-1" class="mb-6 scroll-mt-20">
+            <h3
+              class="text-2xl font-bold mb-3 flex items-center gap-2"
+              style="color: var(--text-primary)"
+            >
+              <span style="color: var(--accent)">💳</span> 2.1. Правовое
+              регулирование и виды
+            </h3>
+            <p style="color: var(--text-secondary)">
+              Банковские карты —
+              <span class="font-semibold" style="color: var(--accent)"
+                >электронное средство платежа (ЭСП)</span
+              >
+              по ФЗ №161-ФЗ. Регулирование: НСПК «Мир», Положение №762-П,
+              внутрибанковские правила.
+            </p>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span
+                class="badge"
+                style="background: var(--accent-glow); color: var(--accent)"
+                >💳 Дебетовые</span
+              ><span
+                class="badge"
+                style="
+                  background: var(--bg-tertiary);
+                  color: var(--text-secondary);
+                "
+                >🏦 Кредитные</span
+              ><span
+                class="badge"
+                style="background: var(--accent-glow); color: var(--accent)"
+                >🎫 Предоплаченные</span
+              ><span
+                class="badge"
+                style="
+                  background: var(--bg-tertiary);
+                  color: var(--text-secondary);
+                "
+                >Виртуальные / Токенизированные</span
+              >
+            </div>
+          </div>
+
+          <div id="glava2-2" class="mb-6 scroll-mt-20">
+            <h3
+              class="text-2xl font-bold mb-3"
+              style="color: var(--text-primary)"
+            >
+              2.2. Механизм операций
+            </h3>
+            <div class="card p-5">
+              <div
+                class="grid gap-3 text-sm"
+                style="color: var(--text-secondary)"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                    style="background: var(--accent); color: white"
+                    >1</span
+                  >
+                  Держатель → операция (POS, NFC, QR, интернет)
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                    style="background: var(--accent); color: white"
+                    >2</span
+                  >
+                  Эквайер → запрос в платежную систему
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                    style="background: var(--accent); color: white"
+                    >3</span
+                  >
+                  Эмитент → авторизация (проверка лимитов)
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                    style="background: var(--accent); color: white"
+                    >4</span
+                  >
+                  Списание → зачисление средств получателю
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                    style="background: var(--accent); color: white"
+                    >5</span
+                  >
+                  Уведомление (SMS/Push) — ст.9 ФЗ №161-ФЗ
+                </div>
+              </div>
+            </div>
+            <p class="mt-3 text-sm" style="color: var(--text-secondary)">
+              <span class="font-semibold">Защита:</span> 3D Secure, токенизация,
+              биометрия.
+            </p>
+          </div>
+
+          <div id="glava2-3" class="scroll-mt-20">
+            <h3
+              class="text-2xl font-bold mb-4"
+              style="color: var(--text-primary)"
+            >
+              2.3. Достоинства и недостатки
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="card p-6 advantage-card">
+                <div class="text-3xl mb-2">🚀</div>
+                <div
+                  class="font-black text-xl mb-3"
+                  style="color: var(--accent)"
+                >
+                  Преимущества
+                </div>
+                <ul
+                  class="space-y-2 text-sm"
+                  style="color: var(--text-secondary)"
+                >
+                  <li>
+                    • <span class="font-semibold">Удобство:</span> оплата в одно
+                    касание, онлайн-покупки
+                  </li>
+                  <li>
+                    •
+                    <span class="font-semibold">Безопасность:</span> мгновенная
+                    блокировка, страховка
+                  </li>
+                  <li>
+                    •
+                    <span class="font-semibold">Кэшбэк, бонусы, проценты</span>
+                    на остаток
+                  </li>
+                  <li>
+                    • <span class="font-semibold">Контроль расходов</span> через
+                    мобильное приложение
+                  </li>
+                  <li>• Интеграция с СБП и цифровыми сервисами</li>
+                </ul>
+              </div>
+              <div class="card p-6 disadvantage-card">
+                <div class="text-3xl mb-2">⚠️</div>
+                <div
+                  class="font-black text-xl mb-3"
+                  style="color: var(--text-primary)"
+                >
+                  Недостатки
+                </div>
+                <ul
+                  class="space-y-2 text-sm"
+                  style="color: var(--text-secondary)"
+                >
+                  <li>
+                    • <span class="font-semibold">Мошенничество:</span> фишинг,
+                    скимминг, онлайн-кражи
+                  </li>
+                  <li>
+                    • <span class="font-semibold">Комиссии:</span> обслуживание,
+                    снятие в чужих банкоматах
+                  </li>
+                  <li>
+                    • <span class="font-semibold">Зависимость</span> от
+                    интернета и терминалов
+                  </li>
+                  <li>
+                    •
+                    <span class="font-semibold">Психологический фактор</span> —
+                    легче тратить «виртуальные» деньги
+                  </li>
+                  <li>• Технические сбои, ограничения по суммам</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="mt-5 text-center text-sm py-3 px-4 rounded-full"
+              style="background: var(--bg-tertiary); color: var(--text-muted)"
+            >
+              💡 Карты сочетают скорость платежных поручений и удобство наличных
+            </div>
+          </div>
+        </section>
+
+        <!-- ЗАКЛЮЧЕНИЕ -->
+        <section
+          id="zaklyuchenie"
+          class="reveal scroll-mt-20 rounded-3xl p-8 card"
+          style="border-left: 4px solid var(--accent)"
+        >
+          <h2
+            class="section-accent text-3xl font-black startup-heading mb-4"
+            style="color: var(--text-primary)"
+          >
+            ЗАКЛЮЧЕНИЕ
+          </h2>
+          <p
+            class="text-lg leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            В РФ расчеты и платежи строятся на принципах
+            <span class="font-bold"
+              >свободы формы, безопасности и цифровизации</span
+            >. Наличные сохраняют нишу в мелких операциях, но доминируют
+            безналичные формы (ГК РФ, Положение №762-П).
+            <span class="font-bold" style="color: var(--accent)"
+              >Банковские карты</span
+            >
+            — наиболее динамичный инструмент, интегрированный в НПС. Перспективы
+            —
+            <span class="font-semibold" style="color: var(--accent)"
+              >СБП, цифровой рубль</span
+            >
+            при сохранении баланса с наличными.
+          </p>
+        </section>
+
+        <!-- ЛИТЕРАТУРА -->
+        <section id="literatura" class="reveal scroll-mt-20">
+          <h2
+            class="section-accent text-3xl font-black startup-heading mb-5"
+            style="color: var(--text-primary)"
+          >
+            СПИСОК ЛИТЕРАТУРЫ
+          </h2>
+          <ol
+            class="list-decimal pl-6 space-y-2 text-sm"
+            style="color: var(--text-secondary)"
+          >
+            <li>
+              Гражданский кодекс РФ (часть вторая) от 26.01.1996 № 14-ФЗ (ред.
+              2025).
+            </li>
+            <li>
+              Федеральный закон от 27.06.2011 № 161-ФЗ «О национальной платежной
+              системе».
+            </li>
+            <li>
+              Положение Банка России от 29.06.2021 № 762-П «О правилах перевода
+              денежных средств».
+            </li>
+            <li>
+              Официальный сайт Банка России: cbr.ru (СБП, цифровой рубль,
+              статистика).
+            </li>
+            <li>
+              Научная литература по банковскому делу и экономической культуре
+              (учебники для вузов).
+            </li>
+          </ol>
+          <p
+            class="text-[10px] mt-6 pt-4 border-t"
+            style="color: var(--text-muted); border-color: var(--border-light)"
+          >
+            ГОСТ Р 7.0.11-2011
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <footer
+      class="border-t py-6 text-center text-xs"
+      style="
+        background: var(--bg-primary);
+        border-color: var(--border-light);
+        color: var(--text-muted);
+      "
+    >
+      Сухоревский Д. А. • Доклад: Расчеты и платежи в РФ • Экономическая
+      культура 2026
+    </footer>
+
+    <script>
+      // Функция переключения темы с использованием CSS переменных
+      function toggleTheme() {
+        const html = document.documentElement;
+        const icon = document.getElementById("theme-icon");
+
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          icon.textContent = "☀️";
+          localStorage.setItem("theme", "light");
+        } else {
+          html.classList.add("dark");
+          icon.textContent = "🌙";
+          localStorage.setItem("theme", "dark");
+        }
+        // Переменные CSS автоматически применяются благодаря :root и html.dark
+      }
+
+      // Загрузка сохраненной темы
+      function loadTheme() {
+        const html = document.documentElement;
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const icon = document.getElementById("theme-icon");
+
+        if (saved === "dark" || (!saved && prefersDark)) {
+          html.classList.add("dark");
+          if (icon) icon.textContent = "🌙";
+        } else {
+          html.classList.remove("dark");
+          if (icon) icon.textContent = "☀️";
+        }
+      }
+
+      // DRAWER ЛОГИКА
+      const overlay = document.getElementById("drawer-overlay");
+      const drawer = document.getElementById("drawer");
+      const burger = document.getElementById("burger-btn");
+      const closeBtns = document.querySelectorAll(
+        "#close-drawer, #drawer-close-bottom",
+      );
+
+      function openDrawer() {
+        if (overlay && drawer) {
+          overlay.classList.add("active");
+          drawer.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      function closeDrawer() {
+        if (overlay && drawer) {
+          overlay.classList.remove("active");
+          drawer.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+      }
+
+      if (burger) burger.addEventListener("click", openDrawer);
+      closeBtns.forEach(
+        (btn) => btn && btn.addEventListener("click", closeDrawer),
+      );
+      if (overlay) overlay.addEventListener("click", closeDrawer);
+
+      // Закрытие по ссылкам в drawer с плавным скроллом
+      document
+        .querySelectorAll(".drawer-link, .drawer-sublink")
+        .forEach((link) => {
+          link.addEventListener("click", (e) => {
+            closeDrawer();
+            const targetId = link.getAttribute("href");
+            if (targetId && targetId !== "#") {
+              const target = document.querySelector(targetId);
+              if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }
+          });
+        });
+
+      // REVEAL АНИМАЦИЯ
+      const reveals = document.querySelectorAll(".reveal");
+      function revealOnScroll() {
+        reveals.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 120) el.classList.add("revealed");
+        });
+      }
+
+      window.addEventListener("load", () => {
+        loadTheme();
+        revealOnScroll();
+      });
+      window.addEventListener("scroll", revealOnScroll);
+
+      // Плавный скролл для всех якорей
+      document
+        .querySelectorAll('a[href^="#"]:not(.drawer-link, .drawer-sublink)')
+        .forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const hash = this.getAttribute("href");
+            if (hash === "#" || !hash) return;
+            const target = document.querySelector(hash);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
