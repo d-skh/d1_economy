@@ -94,7 +94,7 @@
         /* Border & UI */
         --border-light: #574107;
         --border-medium: #ffd000;
-        --card-bg: #fff0b3;
+        --card-bg: #fff4d1;
 --card-shadow: 
   0 8px 20px -6px rgba(245, 184, 27, 0.25),
   0 2px 6px -2px rgba(245, 184, 27, 0.15),
@@ -809,34 +809,42 @@
 
         <!-- ВВЕДЕНИЕ -->
         <section id="vvedenie" class="reveal scroll-mt-20">
-          <div class="mb-6">
-            <span
-              class="text-xs font-semibold uppercase tracking-wider"
-              style="color: var(--accent); letter-spacing: 0.12em"
-            >
-              Введение
-            </span>
-            <h2
-              class="text-4xl sm:text-5xl font-black startup-heading mt-1"
-              style="color: var(--text-primary); line-height: 1.2"
-            >
-              <span
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    var(--gradient-start) 0%,
-                    var(--gradient-end) 100%
-                  );
-                  background-clip: text;
-                  -webkit-background-clip: text;
-                  color: transparent;
-                "
-              >
-                Расчётно-платёжная
-              </span>
-              <br class="hidden sm:block" />система России
-            </h2>
-          </div>
+         <div class="mb-10 relative pl-6">
+  <!-- Градиентная полоса сбоку -->
+  <div 
+    class="absolute left-0 top-1 bottom-1 w-1.5 rounded-full shadow-sm" 
+    style="background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);"
+  ></div>
+
+  <span
+    class="text-xs font-semibold uppercase tracking-wider block"
+    style="color: var(--accent); letter-spacing: 0.12em"
+  >
+    Введение
+  </span>
+  
+  <h2
+    class="text-4xl sm:text-5xl font-black startup-heading mt-1 leading-[1.2]"
+    style="color: var(--text-primary)"
+  >
+    <span
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start) 0%,
+          var(--gradient-end) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      "
+    >
+      Расчётно-платёжная
+    </span>
+    <br class="hidden sm:block" />система России
+  </h2>
+</div>
+
 
           <div
             class="space-y-5 leading-relaxed"
