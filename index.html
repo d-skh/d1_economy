@@ -2143,11 +2143,11 @@
 
         if (html.classList.contains("dark")) {
           html.classList.remove("dark");
-          icon.textContent = "☀️";
+          icon.textContent = "🌙";
           localStorage.setItem("theme", "light");
         } else {
           html.classList.add("dark");
-          icon.textContent = "🌙";
+          icon.textContent = "☀️";
           localStorage.setItem("theme", "dark");
         }
         // Переменные CSS автоматически применяются благодаря :root и html.dark
@@ -2164,10 +2164,10 @@
 
         if (saved === "dark" || (!saved && prefersDark)) {
           html.classList.add("dark");
-          if (icon) icon.textContent = "🌙";
+          if (icon) icon.textContent = "☀️";
         } else {
           html.classList.remove("dark");
-          if (icon) icon.textContent = "☀️";
+          if (icon) icon.textContent = "🌙";
         }
       }
 
